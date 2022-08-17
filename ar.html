@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="assets/img/logo.png" rel="icon">
+        <link rel="stylesheet" href="assets/librerias/bootstrap.min.css"> <!--* Libraries Bootstrap -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"> </script> <!-- dowloand-img-axios -->
+		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> <!-- Script AR.js --> 
+		<script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script> <!-- Script AR.js -->
+		<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> <!-- Script AR.js -->
+		<title> Augmented Reality Video </title>
+
+	</head>
+
+	<body style="margin : 0px; overflow: hidden;">
+
+        <!-- container -->
+		<div class="container-button"> 
+            <!--Card body-->
+            <div class="card-body">
+
+                <button type="button" class="btn btn-rounded" id="btn-Help" data-toggle="modal" data-target="#modalRelatedContent" data-placement="top" title="Ver Instrucciones"> <i class="fas fa-info-circle"></i>  </button>
+
+                    <!--Modal: modalRelatedContent-->
+                    <div class="modal fade right" id="modalRelatedContent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+                        <!-- modal-dialog -->
+                        <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+                                <!--Header-->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true" class="white-text">&times;</span> </button>
+                                </div>
+                                <!--Header-->
+                                <!--Body-->
+                                <div class="modal-body">
+                                    <!-- row -->
+                                    <div class="row">
+                                        <!-- col-5 -->
+                                        <div class="col-5">
+                                            <img src="assets/img/hiro.png" alt="hiro.png" class="img-hiro">
+                                        </div>
+                                        <!-- col-5 -->
+                                        <!-- col-7 -->
+                                        <div class="col-7"> 
+                                            <p class="button-dowload"> Da clic en el icono <button class="btn btn-rounded" id="btn-Dowload" data-toggle="tooltip" data-placement="top" title="Descargar" onclick="downloadImg()"> <i class="fas fa-file-download"></i> </button> 
+                                                para descargar el marcador y poder ver el Video 3D. Con el marcador previamente descargado colócalo en la cámara para ver el video, da clic en los botones para activar el sonido o desactivarlo.
+                                            </p>
+                                        </div>
+                                        <!-- col-7 -->
+                                    </div>
+                                    <!-- row -->
+                                </div>
+                                <!--Body-->
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                        <!-- modal-dialog -->
+                    </div>
+                    <!--Modal: modalRelatedContent-->
+                <button class="btn btn-rounded" id="volume-down" data-toggle="tooltip" data-placement="top" title="Activar Sonido"> <i class="fas fa-volume-down"></i> </button>
+                <button class="btn btn-rounded" id="volume-mute" data-toggle="tooltip" data-placement="top" title="Desactivar Sonido"> <i class="fas fa-volume-mute"></i> </button>
+                <button class="btn btn-rounded" id="btn-Reload" data-toggle="tooltip" data-placement="top" title="Recargar"> <i class="fas fa-redo"></i> </button>
+                    
+            </div>
+            <!--Card body-->
+		</div>
+        <!-- container -->
+
+        <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">   
+            <a-marker preset="hiro">
+                <video id="loadVideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="assets/video/Rise.mp4"></video>
+                <a-video src="#loadVideo" position="0 0 0" rotation="250 1800 0" ></a-video>
+            </a-marker>
+                <a-entity camera></a-entity>
+        </a-scene>
+
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+		<script src="assets/librerias/jquery-3.6.0.min.js"></script> <!--! Libraries jquery -->
+        <script src="assets/librerias/popper.min.js"></script> <!--! Libraries Icons -->
+        <script src="assets/librerias/bootstrap.min.js"></script> <!--! Libraries Bootstrap -->
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script> <!--! Libraries Font Of fontawesome -->
+        <script defer src="assets/js/main.js"></script>
+
+	</body>
+</html>
