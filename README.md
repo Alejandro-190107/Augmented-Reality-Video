@@ -38,6 +38,6 @@ $ git clone https://github.com/Alejandro-190107/Augmented-Reality-Video.git
 
 ## <p align="left" style="color: #43a047;"> Screenshot Project 💻 </p>
 
-🔶 [Project Website](https://alejandro-lopez.futuretecware.com/Augmented-Reality-Video/index.html)
+🔶 [Project Website](https://alejandro-190107.github.io/Augmented-Reality-Video/)
 
 ![Screenshot](assets/img/Screenshot.png)
